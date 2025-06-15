@@ -1,0 +1,7 @@
+-   '/'
+-   '/blog'
+-   '/project'
+-   'project/extensions'
+-   'project/canvas'
+-   'project/apps'
+-   'project/games'
