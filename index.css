@@ -14,7 +14,7 @@
 	--yatya-c: hsl(33, 80%, 50%);
 	--blanktab-c: darkslategray;
 	--simpletimer-c: hsl(145, 55%, 40%);
-	--readmelater-c: hsl(49, 67%, 41%);
+	--readmelater-c: hsl(33, 48%, 66%);
 	--batchactions-c: hsl(209, 55%, 45%);
 	--search-c: hsl(210, 9%, 21%);
 	--cpu-c: hsl(192, 18%, 33%);
@@ -67,6 +67,7 @@
 	color: inherit;
 	text-decoration: inherit;
 }
+
 h2[class="huge-text"] {
 	font-size: clamp(2rem, 8vw, 5rem);
 	background-color: gold;
@@ -76,6 +77,12 @@ h2[class="huge-text"] {
 h2,
 product-app {
 	cursor: pointer;
+}
+
+h2:last-of-type {
+	font-style: italic;
+	letter-spacing: -10px;
+	cursor: default;
 }
 
 product-app:hover {
@@ -122,6 +129,7 @@ product-app {
 		}
 
 		.info {
+			margin-bottom: 1rem;
 			display: flex;
 			flex-direction: column;
 
@@ -134,7 +142,7 @@ product-app {
 
 			.name::before {
 				line-height: inherit;
-				content: ">";
+				content: "-";
 				font-size: inherit;
 				margin-right: 1rem;
 			}

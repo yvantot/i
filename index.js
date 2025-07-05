@@ -3,6 +3,7 @@ import { Utils } from "./utils.js";
 class AppLinks extends HTMLElement {
 	constructor() {
 		super();
+		this.favicon_api = "https://www.google.com/s2/favicons?sz=64&domain=";
 	}
 
 	connectedCallback() {
@@ -19,12 +20,14 @@ class AppLinks extends HTMLElement {
 			const [url, icon] = link.split(";");
 			if (url) {
 				const a = Utils.create_element("a", { href: url, target: "_blank" });
-				if (icon) a.append(Utils.create_element("img", { src: icon, loading: "lazy" }));
-				else {
-					const siteicon_placeholder = Utils.create_element("svg", { namespace: "svg" });
-					siteicon_placeholder.innerHTML = `<use href="#siteicon-placeholder"></use>`;
-					a.append(siteicon_placeholder);
-				}
+				const img = Utils.create_element("img", { src: this.favicon_api + url, loading: "lazy" });
+				img.onerror = function () {
+					img.onerror = null;
+					img.src = "./images/favicon-placeholder.png";
+				};
+
+				a.append(img);
+
 				container.append(a);
 			}
 		}
