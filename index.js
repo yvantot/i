@@ -20,14 +20,14 @@ class AppLinks extends HTMLElement {
 			const [url, icon] = link.split(";");
 			if (url) {
 				const a = Utils.create_element("a", { href: url, target: "_blank" });
-				const img = Utils.create_element("img", { src: this.favicon_api + url, loading: "lazy" });
+				const img = Utils.create_element("img", { src: this.favicon_api + new URL(url).hostname, loading: "lazy" });
+
 				img.onerror = function () {
-					img.onerror = null;
 					img.src = "./images/favicon-placeholder.png";
+					img.onerror = null;
 				};
 
 				a.append(img);
-
 				container.append(a);
 			}
 		}

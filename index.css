@@ -61,8 +61,8 @@
 	white-space: nowrap;
 	font-weight: 400;
 	line-height: 1;
-	letter-spacing: 0.5rem;
-	word-spacing: 0.5rem;
+	letter-spacing: clamp(-5px, 1vw, 0.5rem);
+	word-spacing: clamp(-5px, 1vw, 0.5rem);
 	font-size: clamp(1.5rem, 5vw, 5rem);
 	color: inherit;
 	text-decoration: inherit;
@@ -73,7 +73,13 @@ h2[class="huge-text"] {
 	background-color: gold;
 	border-top: var(--border-top);
 }
-
+h2 {
+	padding-left: 1rem;
+}
+h2:hover + product-app {
+	border-top: var(--border-top);
+	height: clamp(1rem, 5vw, 3rem);
+}
 h2,
 product-app {
 	cursor: pointer;
@@ -81,7 +87,6 @@ product-app {
 
 h2:last-of-type {
 	font-style: italic;
-	letter-spacing: -10px;
 	cursor: default;
 }
 
