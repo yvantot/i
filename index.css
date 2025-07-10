@@ -134,8 +134,7 @@ entries-category:hover + make-entry[class="hide-entry"] {
 }
 
 make-entry:hover {
-	transition: height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border 0.1s linear, background-color 0s linear;
-	height: calc(var(--hugetext-size) * 1.2);
+	height: calc(var(--hugetext-size) * 1.1);
 	.huge-text {
 		color: var(--font-color-rev);
 	}
@@ -146,7 +145,7 @@ make-entry {
 	overflow: hidden;
 	height: calc(var(--hugetext-size) * 0.75);
 	background-color: var(--entry-bg);
-	transition: height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border 0.1s linear, background-color 0.2s linear;
+	transition: height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border 0.1s linear;
 	display: block;
 	padding: 0 0 0 clamp(0.5rem, 5vw, 5rem);
 	border-top: var(--border-top);
