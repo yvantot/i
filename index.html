@@ -8,7 +8,6 @@
 		<meta name="author" content="The site's author" />
 		<link rel="stylesheet" href="index.css" />
 		<script src="index.js" type="module" defer></script>
-		
 	</head>
 	<body>
 		<svg class="no-display">
@@ -16,33 +15,58 @@
 				<path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-7-.5-14.5T799-507q-5 29-27 48t-52 19h-80q-33 0-56.5-23.5T560-520v-40H400v-80q0-33 23.5-56.5T480-720h40q0-23 12.5-40.5T563-789q-20-5-40.5-8t-42.5-3q-134 0-227 93t-93 227h200q66 0 113 47t47 113v40H400v110q20 5 39.5 7.5T480-160Z" />
 			</symbol>
 		</svg>
+		<!-- START -->
+		<text-entry
+			>Home of the
+			<select name="topic-links" id="topic-links" class="topic-links huge-text">
+				<option value="/">programming</option>
+				<option value="/art/d/index.html">digital art</option>
+				<option value="/art/l/index.html">local art</option>
+			</select>
+			stuff &copy;yvantot have built throughout the years.</text-entry
+		>
 
-		<h2 class="huge-text">Browser Extensions</h2>
-		
-		<product-app app-color="var(--altweb-c)" app-links="https://github.com/yvantot/altweb;./images/github.png" app-title="AltTab for browser" app-links="#;./images/chrome.png|#;./images/firefox.png|google.com;"  app-screenshot="./images/ss/altweb.png" app-name="AltWeb" 
-			app-description="Navigate the web with fullscreen-on.
-			EZPZ shortcuts, it's literally Alt + W.
-			It supports tab preview (how!?).
-			It also supports multiple browser windows.
-			No more AltTabbing, more AltWebbing!"></product-app>	
+		<vertical-divider>&nbsp;</vertical-divider>
 
-		<product-app app-color="var(--muni-c)" app-links="https://github.com/yvantot/muni;./images/github.png" app-title="Learn while you browse"  app-screenshot="./images/ss/muni.png" app-name="Muni" 
+		<entries-category>Extensions</entries-category>
+
+		<make-entry
+			class="hide-entry"
+			app-color="var(--muni-c)"
+			entry-links="https://github.com/yvantot/muni;./images/github.png"
+			app-title="Learn while you browse"
+			app-screenshot="./images/ss/muni.png"
+			app-name="Muni"
 			app-description="Oh boy, are you procrastinating?
 			Have an exam tomorrow? Panicking? Coping?
 			Listen, I have the goods.
 			Muni, it allows you to memorize everything while you're watching TikTok brainrot reels.
 			Feed it your learning material and it'll generate cards for you.
 			Those cards will popup periodically (or dynamically based on your card's mastery) to make topics stick to your brain.
-			'Remember forever?' why not, 'while scrolling useless junks on Reddit' sure."></product-app>
+			'Remember forever?' why not, 'while scrolling useless junks on Reddit' sure."
+		></make-entry>
 
-		<product-app app-color="var(--yatya-c)" app-links="https://nesslabs.com/smart-goals-pact;#|https://github.com/yvantot/YetAnotherTrackerYoullAbandon;./images/github.png" app-title="Track your habits"  app-screenshot="./images/ss/yatya.png" app-name="YATYA" 
+		<make-entry
+			class="hide-entry"
+			app-color="var(--yatya-c)"
+			entry-links="https://nesslabs.com/smart-goals-pact;#|https://github.com/yvantot/YetAnotherTrackerYoullAbandon;./images/github.png"
+			app-title="Track your habits"
+			app-screenshot="./images/ss/yatya.png"
+			app-name="YATYA"
 			app-description="Yet Another Tracker You'll Abandon, right.
 			Don't mind my progress, I'm sure you can do better than mine.
 			So yup, this extension tracks your habits. 
 			And PACT (I'll link an article) has a first class support.
-			PS. I hope you prove this extension wrong, ucandoit!"></product-app>
+			PS. I hope you prove this extension wrong, ucandoit!"
+		></make-entry>
 
-		<product-app app-color="var(--blanktab-c)" app-links="https://github.com/yvantot/NewtabBlank;./images/github.png" app-title="Focused newtab"  app-screenshot="./images/ss/blanktab.png" app-name="Blanktab" 
+		<make-entry
+			class="hide-entry"
+			app-color="var(--blanktab-c)"
+			entry-links="https://github.com/yvantot/NewtabBlank;./images/github.png"
+			app-title="Focused newtab"
+			app-screenshot="./images/ss/blanktab.png"
+			app-name="Blanktab"
 			app-description="No BS default newtab.			
 			Add text, essays, poems, quotes in your newtab, links works too.
 			'But why should I install it?' To be honest, I don't know. I made this because I need it.
@@ -51,69 +75,124 @@
 			Have you read the book Atomic Habits by James Clear?
 			Broooo - the sheer volume of aura reading '1% better everyday' in your newtab will catapult your motivation through the roof.
 			And imagine, you're so motivated right, like you're hyped! And now, this is the reason why 'links' is supported.
-			You can point that motivation towards an action, exactly! A link to KhanAcademy or something."></product-app>
+			You can point that motivation towards an action, exactly! A link to KhanAcademy or something."
+		></make-entry>
 
-		<product-app app-color="var(--simpletimer-c)" app-links="https://github.com/yvantot/SimpleTimer;./images/github.png" app-title="Simple timer"  app-screenshot="./images/ss/simpletimer.png" app-name="Simple Timer" 
+		<make-entry
+			class="hide-entry"
+			app-color="var(--simpletimer-c)"
+			entry-links="https://github.com/yvantot/SimpleTimer;./images/github.png"
+			app-title="Simple timer"
+			app-screenshot="./images/ss/simpletimer.png"
+			app-name="Simple Timer"
 			app-description="It's a timer, as an extension.
 			The reason why I made this is I felt the need to limit my websites usage.
 			So I would start a timer, name it like 'Procrastinate', set it for 30 minutes and be guilt-free from my 'time-wasting'.
-			It shows the current time in extension icon, you can set a name, or description; all of which will show up in notification."></product-app>		
+			It shows the current time in extension icon, you can set a name, or description; all of which will show up in notification."
+		></make-entry>
 
-		<product-app  app-color="var(--batchactions-c)" app-links="https://chromewebstore.google.com/detail/fhedcmcogemcndkjkoaojkdggfmpbmkk?utm_source=item-share-cb;./images/chrome.png" app-title="Batch messenger.com actions"  app-screenshot="./images/ss/batchaction.png" app-name="Messenger Batch Actions" 
+		<make-entry
+			class="hide-entry"
+			app-color="var(--batchactions-c)"
+			entry-links="https://chromewebstore.google.com/detail/fhedcmcogemcndkjkoaojkdggfmpbmkk?utm_source=item-share-cb;./images/chrome.png"
+			app-title="Batch messenger.com actions"
+			app-screenshot="./images/ss/batchaction.png"
+			app-name="Messenger Batch Actions"
 			app-description="For Messenger people who want to declutter their inbox.
 			- Archieve/unarchive, mute/unmute, block/unblock, leave groups, delete multiple chats or your whole inbox in one click.
 			
-			It's possible that you'll Messenger might flinch and the changes may take a while to reflect on your inbox. That's perfectly fine, this feature is not intended by the official app, so it'll Messenger will groan, but it'll be fine."></product-app>
+			It's possible that you'll Messenger might flinch and the changes may take a while to reflect on your inbox. That's perfectly fine, this feature is not intended by the official app, so it'll Messenger will groan, but it'll be fine."
+		></make-entry>
 
-		<product-app app-color="var(--readmelater-c)"  app-links="https://chromewebstore.google.com/detail/cfbghmlaammffdganopagclljeoligcb?utm_source=item-share-cb;./images/chrome.png" app-title="Read me later"  app-screenshot="./images/ss/readmelater.png" app-name="Read Me Later" 
+		<make-entry
+			class="hide-entry"
+			app-color="var(--readmelater-c)"
+			entry-links="https://chromewebstore.google.com/detail/cfbghmlaammffdganopagclljeoligcb?utm_source=item-share-cb;./images/chrome.png"
+			app-title="Read me later"
+			app-screenshot="./images/ss/readmelater.png"
+			app-name="Read Me Later"
 			app-description="Quickly save all of your tabs for later reading with just one click!
 
-			*It support input links btw*"></product-app>
+			*It support input links btw*"
+		></make-entry>
 
-		<!-- <product-app  app-title="Supercharged messenger.com"  app-screenshot="#" app-name="#" app-description="#"></product-app> -->
+		<!-- <make-entry  app-title="Supercharged messenger.com"  app-screenshot="#" app-name="#" app-description="#"></make-entry> -->
 
-		<h2 class="huge-text">Websites</h2>
-		<product-app app-color="var(--search-c)" class="hide-entry" app-links="https://interactive-search-algorithm.vercel.app/;" app-title="Search algorithms visualizer"  app-screenshot="./images/ss/search.png" app-name="Search Visualizer" 
-			app-description="I made this one for a school presentation, and I think I nailed my reporting! You can try it by visiting the attached link"></product-app>
+		<entries-category>Websites</entries-category>
+		<make-entry app-color="var(--search-c)" class="hide-entry" entry-links="https://interactive-search-algorithm.vercel.app/;" app-title="Search algorithms visualizer" app-screenshot="./images/ss/search.png" app-name="Search Visualizer" app-description="I made this one for a school presentation, and I think I nailed my reporting! You can try it by visiting the attached link"></make-entry>
 
-		<product-app app-color="var(--cpu-c)" class="hide-entry" app-links="https://cpu-scheduling-visualiser.vercel.app/;" app-title="CPU scheduling visualizer"  app-screenshot="./images/ss/cpu.png" app-name="Scheduling Visualizer" 
-			app-description="I made this one under 3 days, so don't expect too much from it."></product-app>		
-		
-		<product-app app-color="var(--todobot-c)" class="hide-entry" app-links="https://robot-todo-task.vercel.app/todolist;" app-title="Todobot, a cute robot"  app-screenshot="./images/ss/todobot.png" app-name="Todobot" 
+		<make-entry app-color="var(--cpu-c)" class="hide-entry" entry-links="https://cpu-scheduling-visualiser.vercel.app/;" app-title="CPU scheduling visualizer" app-screenshot="./images/ss/cpu.png" app-name="Scheduling Visualizer" app-description="I made this one under 3 days, so don't expect too much from it."></make-entry>
+
+		<make-entry
+			app-color="var(--todobot-c)"
+			class="hide-entry"
+			entry-links="https://robot-todo-task.vercel.app/todolist;"
+			app-title="Todobot, a cute robot"
+			app-screenshot="./images/ss/todobot.png"
+			app-name="Todobot"
 			app-description="I made this one to learn React.
 			I don't have anything to talk about because this app is relatively simple, it's literally a todo-list.
 			So yeah, React is an amazing framework. JSX looks better than what I'm currently doing right now (custom elements).
 			I learned React, but I don't want to use it for my personal projects because it felt overkill and needlessly complicated.
-			I want to keep my stacks for my babies as simple as I can."></product-app>
+			I want to keep my stacks for my babies as simple as I can."
+		></make-entry>
 
-		<product-app class="hide-entry" app-links="https://ecostore-dalman.vercel.app/;" app-color="var(--ecostore-c)" app-title="Fake E-store"  app-screenshot="./images/ss/ecostore.png" app-name="Ecostore" 
+		<make-entry
+			class="hide-entry"
+			entry-links="https://ecostore-dalman.vercel.app/;"
+			app-color="var(--ecostore-c)"
+			app-title="Fake E-store"
+			app-screenshot="./images/ss/ecostore.png"
+			app-name="Ecostore"
 			app-description="Ecostore, a fake e-store!
 			I made this in order to learn React-router and API.
 			I used to think these jargons are scary when I had no slightest idea about them.
 			API? Whoa, sounds very scary and complicatteeeddd- nope.
 			I was even afraid to start, creating UI outlines, researching how they work under the hood...
-			I should've just started doing things and learn afterwards to maximise the emotional hurtness of failing and brutal realizations."></product-app>
+			I should've just started doing things and learn afterwards to maximise the emotional hurtness of failing and brutal realizations."
+		></make-entry>
 
-		<h2 class="huge-text">Non-web</h2>
-		<product-app class="hide-entry" app-links="https://github.com/yvantot/CAnimator;./images/github.png" app-color="var(--canimator-c)" app-title="ascii-animation.exe"  app-screenshot="./images/ss/canimator.png" app-name="CAnimator"
+		<entries-category>Non-web</entries-category>
+		<make-entry
+			class="hide-entry"
+			entry-links="https://github.com/yvantot/CAnimator;./images/github.png"
+			app-color="var(--canimator-c)"
+			app-title="ascii-animation.exe"
+			app-screenshot="./images/ss/canimator.png"
+			app-name="CAnimator"
 			app-description="Make pixel & ASCII animation/art directly in your command line!
 
 			- It allows you to make an animation in pixel/ASCII style.
 			- It supports mouse operation.
-			- A single C++ file."></product-app>
+			- A single C++ file."
+		></make-entry>
 
-		<product-app class="hide-entry" app-links="https://github.com/yvantot/CommissionCalculator;./images/github.png" app-color="var(--muralcalc-c)" app-links="https://ph.pinterest.com/pintakita_mural/;./images/pinterest.png|https://github.com/yvantot/CommissionCalculator;./images/github.png" app-title="mural-pricing.apk"  app-screenshot="./images/ss/muralcalc.jpg" app-name="Mural Pricing" 
+		<make-entry
+			class="hide-entry"
+			entry-links="https://github.com/yvantot/CommissionCalculator;./images/github.png"
+			app-color="var(--muralcalc-c)"
+			entry-links="https://ph.pinterest.com/pintakita_mural/;./images/pinterest.png|https://github.com/yvantot/CommissionCalculator;./images/github.png"
+			app-title="mural-pricing.apk"
+			app-screenshot="./images/ss/muralcalc.jpg"
+			app-name="Mural Pricing"
 			app-description="I am a part-time mural artist, me and my girlfriend founded Pintakita, it's a small mural business that is entirely run by students.
 			The experience was a blast. The stakes are very high for every clients and I'd often feel the need to vomit from anxiety and stress.
 			But it was so rewarding. Every time you conquer the seemingly 'impossible' requests from clients, they become your standard for the next commission.
-			You can check our artworks and past commissions in the attached Pinterest link."></product-app>
+			You can check our artworks and past commissions in the attached Pinterest link."
+		></make-entry>
 
-		<product-app class="hide-entry" app-color="var(--invsys-c)" app-title="inventory-sys.java"  app-screenshot="./images/ss/inventory.png" app-name="Inventory System" 
+		<make-entry
+			class="hide-entry"
+			app-color="var(--invsys-c)"
+			app-title="inventory-sys.java"
+			app-screenshot="./images/ss/inventory.png"
+			app-name="Inventory System"
 			app-description="I made this one for a school project. This was my first introduction to GUI builder IDE like Netbeans.
 			It was fairly simple, and fun!
 			I love it when I'm not proficient on something like with this GUI builder or Java, I'd hack things together (even if they're inefficient) to do what I want my program to do.
-			Like this bar graph."></product-app>
+			Like this bar graph."
+		></make-entry>
 
-		<h2 class="huge-text">@yvantot</h2>
+		<vertical-divider>&nbsp;</vertical-divider>
 	</body>
 </html>

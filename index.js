@@ -1,15 +1,15 @@
 import { Utils } from "./utils.js";
 
-class AppLinks extends HTMLElement {
+class EntryLinks extends HTMLElement {
 	constructor() {
 		super();
 		this.favicon_api = "https://www.google.com/s2/favicons?sz=64&domain=";
 	}
 
 	connectedCallback() {
-		let links = this.getAttribute("app-links");
+		let links = this.getAttribute("entry-links");
 		if (!links) {
-			this.classList.add("no-display");
+			this.remove();
 			return;
 		}
 
@@ -35,15 +35,15 @@ class AppLinks extends HTMLElement {
 	}
 }
 
-class Product extends HTMLElement {
+class Entry extends HTMLElement {
 	constructor() {
 		super();
 	}
 
 	connectedCallback() {
-		// Passing native null value as an attribute to <app-links> as its attribute will make the null value to "null"
+		// Passing native null value as an attribute to <entry-links> as its attribute will make the null value to "null"
 		// so instead use ?? "" to make it a falsy value
-		const links = this.getAttribute("app-links") ?? "";
+		const links = this.getAttribute("entry-links") ?? "";
 
 		const title = this.getAttribute("app-title");
 		const name = this.getAttribute("app-name");
@@ -56,9 +56,11 @@ class Product extends HTMLElement {
 				<div class="info">                    
 					<p class="name">${name}</p>
 					<p class="description">${description}</p>    
-					<app-links app-links="${links}"></app-links>
-				</div>                
-                <img loading="lazy" class="screenshot" src="${screenshot}"/>
+					<entry-links entry-links="${links}"></entry-link>
+				</div>          
+				<div class="screenshots">
+					<img loading="lazy" src="${screenshot}"/>
+				</div>                      
             </div> 
         `.trim();
 	}
@@ -80,7 +82,7 @@ class Index {
 			e.style.backgroundColor = "";
 		}
 
-		const target = event.target.closest("product-app");
+		const target = event.target.closest("make-entry");
 		if (!target) return;
 		if (target.classList.contains("click-entry")) return;
 		if (target.style.backGroundColor) return;
@@ -91,19 +93,18 @@ class Index {
 	}
 
 	handleClick(event) {
-		const target = event.target.closest("product-app, h2");
+		const target = event.target.closest("make-entry, entries-category");
 		if (!target) return;
 		switch (target.nodeName) {
-			case "PRODUCT-APP": {
+			case "MAKE-ENTRY": {
 				target.classList.toggle("click-entry");
 				break;
 			}
-			case "H2": {
+			case "ENTRIES-CATEGORY": {
 				let next = target.nextElementSibling;
-				console.log(next);
 				while (next) {
 					if (this.coloredHover.includes(next)) next.style.backgroundColor = "";
-					if (next.nodeName === "PRODUCT-APP") {
+					if (next.nodeName === "MAKE-ENTRY") {
 						next.classList.remove("click-entry");
 						next.classList.toggle("hide-entry");
 						next = next.nextElementSibling;
@@ -117,8 +118,16 @@ class Index {
 	}
 }
 
-customElements.define("app-links", AppLinks);
-customElements.define("product-app", Product);
+document.getElementById("topic-links").addEventListener("change", ({ target }) => {
+	window.location.assign(target.value);
+});
+
+customElements.define("entry-links", EntryLinks);
+customElements.define("make-entry", Entry);
+
+customElements.define("entries-category", class extends HTMLElement {});
+customElements.define("vertical-divider", class extends HTMLElement {});
+customElements.define("text-entry", class extends HTMLElement {});
 
 const index = new Index();
 index.init();
