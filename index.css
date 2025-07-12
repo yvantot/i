@@ -174,7 +174,7 @@ make-entry {
 				border-bottom-left-radius: 0;
 				width: fit-content;
 				max-height: calc(var(--opened-entry-h) - var(--hugetext-size) - 18px);
-				max-width: 50vw;
+				max-width: 80vw;
 			}
 		}
 
