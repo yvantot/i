@@ -45,9 +45,10 @@ class Entry extends HTMLElement {
 
 		const title = this.getAttribute("app-title");
 		const name = this.getAttribute("app-name");
-		const screenshot = this.getAttribute("app-screenshot");
 		const description = this.getAttribute("app-description");
-		const screenshots = screenshot ? screenshot.split("|") : 0;
+		const medias = this.getAttribute("app-media") ? this.getAttribute("app-media").split("|") : null;
+		const media_path = "./images/ss/" + medias[0];
+		const is_link = /\.com/.test(medias[0]);
 
 		this.innerHTML = `
             <p class="huge-text" target="_blank">${title}</p>            
@@ -57,14 +58,16 @@ class Entry extends HTMLElement {
 					<p class="description">${description}</p>    
 					<entry-links entry-links="${links}"></entry-link>
 				</div>				
-				<div class="screenshots" style="background-image: url('${screenshots[0]}')">
+				<div class="screenshots" style="background-image: url('${medias && is_link === false ? media_path : ""}')">					
+					${is_link ? `<iframe src="${medias[0]}" loading='lazy'></iframe>` : ""}
+
 					<div class="ss-count">
 						<span>1</span>
 						<span>/</span>
-						<span>${screenshots.length}</span>
+						<span>${medias.length}</span>
 					</div>
 					<div class="ss-actions">
-						<button data-action="ss-previous" class="${screenshots.length > 1 ? "" : "no-display"}">
+						<button data-action="ss-previous" class="${medias.length > 1 ? "" : "no-display"}">
 							<svg>
 								<use href="#previous"></use>
 							</svg>
@@ -74,13 +77,12 @@ class Entry extends HTMLElement {
 								<use href="#zoom"></use>
 							</svg>
 						</button>					
-						<button data-action="ss-next" class="${screenshots.length > 1 ? "" : "no-display"}">
+						<button data-action="ss-next" class="${medias.length > 1 ? "" : "no-display"}">
 							<svg>
 								<use href="#next"></use>
 							</svg>
 						</button>
-					</div>
-					
+					</div>							
 				</div>                      
             </div> 
         `.trim();
@@ -149,25 +151,42 @@ class Index {
 			case "BUTTON": {
 				const make_entry = target.closest("make-entry");
 				const ss_container = target.closest(".screenshots");
+				const ss_iframe = ss_container.querySelector("iframe");
 				const ss_count = ss_container.querySelector(".ss-count").children[0];
-				const screenshots = make_entry.getAttribute("app-screenshot").split("|");
+				const medias = make_entry.getAttribute("app-media").split("|");
 				let ss_index = ss_container.dataset?.ss_index ? parseInt(ss_container.dataset.ss_index) : 0;
+
+				const toggle_iframe = () => {
+					const media_path = "./images/ss/" + medias[ss_index];
+					if (/\.com/.test(medias[ss_index])) {
+						if (ss_iframe) ss_iframe.classList.remove("no-display");
+					} else {
+						if (ss_iframe) ss_iframe.classList.add("no-display");
+
+						ss_container.style.backgroundImage = `url("${media_path}")`;
+					}
+				};
 
 				switch (target.dataset.action) {
 					case "ss-next": {
 						ss_index++;
-						ss_index %= screenshots.length;
+						ss_index %= medias.length;
+
+						toggle_iframe();
+
 						ss_count.innerText = ss_index + 1;
 						ss_container.dataset.ss_index = ss_index;
-						ss_container.style.backgroundImage = `url("${screenshots[ss_index]}")`;
+
 						break;
 					}
 					case "ss-previous": {
 						ss_index--;
-						ss_index = Math.abs(ss_index % screenshots.length);
+						if (ss_index < 0) ss_index = medias.length - 1;
+
+						toggle_iframe();
+
 						ss_count.innerText = ss_index + 1;
 						ss_container.dataset.ss_index = ss_index;
-						ss_container.style.backgroundImage = `url("${screenshots[ss_index]}")`;
 						break;
 					}
 					case "ss-zoom": {
