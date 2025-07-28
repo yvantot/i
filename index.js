@@ -8,6 +8,7 @@ class EntryLinks extends HTMLElement {
 
 	connectedCallback() {
 		let links = this.getAttribute("entry-links");
+
 		if (!links) {
 			this.remove();
 			return;
@@ -42,6 +43,7 @@ class Entry extends HTMLElement {
 		// Passing native null value as an attribute to <entry-links> as its attribute will make the null value to "null"
 		// so instead use ?? "" to make it a falsy value
 		const links = this.getAttribute("entry-links") ?? "";
+		console.log(links);
 
 		const title = this.getAttribute("app-title");
 		const name = this.getAttribute("app-name");
