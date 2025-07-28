@@ -216,7 +216,6 @@ class Index {
 					if (next.nodeName === "MAKE-ENTRY") {
 						next.classList.toggle("hide-entry");
 						next.classList.remove("click-entry");
-						next.style.backgroundColor = "var(--entry-bg)";
 						next = next.nextElementSibling;
 					} else {
 						break;
