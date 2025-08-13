@@ -1,5 +1,7 @@
 import { Utils } from "./utils.js";
 
+const is_art_link = location.href.includes("art");
+
 class EntryLinks extends HTMLElement {
 	constructor() {
 		super();
@@ -49,7 +51,7 @@ class Entry extends HTMLElement {
 		const name = this.getAttribute("app-name");
 		const description = this.getAttribute("app-description");
 		const medias = this.getAttribute("app-media") ? this.getAttribute("app-media").split("|") : null;
-		const media_path = "./images/ss/" + medias[0];
+		const media_path = is_art_link ? medias[0] : "./images/ss/" + medias[0];
 		const is_link = /\.com/.test(medias[0]);
 
 		this.innerHTML = `
@@ -159,7 +161,7 @@ class Index {
 				let ss_index = ss_container.dataset?.ss_index ? parseInt(ss_container.dataset.ss_index) : 0;
 
 				const toggle_iframe = () => {
-					const media_path = "./images/ss/" + medias[ss_index];
+					const media_path = is_art_link ? medias[ss_index] : "./images/ss/" + medias[ss_index];
 					if (/\.com/.test(medias[ss_index])) {
 						if (ss_iframe) ss_iframe.classList.remove("no-display");
 					} else {
