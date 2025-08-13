@@ -105,9 +105,12 @@ text-entry,
 	-moz-appearance: none; /* Firefox */
 	text-align: center;
 	width: fit-content;
-	padding: 0;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	border: 3px solid hsla(0, 0%, 20%, 1);
+	box-shadow: 0px 0px 50px 10px rgb(9, 32, 161);
+	font-weight: bold;
 	cursor: pointer;
-	border: none;
 	display: inline;
 	color: var(--font-color);
 	background-color: var(--font-color-rev);
